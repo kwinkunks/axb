@@ -29,26 +29,26 @@ def plot_all(m, d, m_est, d_pred, equalize=True):
 
     ax0 = fig.add_subplot(2,2,1)
     ax0.plot(m)
-    t = "$\mathrm{{Model}}\ m.\ \mathrm{{norm}}\ {:.3f}$"
+    t = "$\mathrm{{Model}}\ \mathbf{{m}}.\ \mathrm{{norm}}\ {:.3f}$"
     ax0.set_title(t.format(norm(m)))
     ax0_mi, ax0_ma = ax0.get_ylim()
 
     ax1 = fig.add_subplot(2,2,2)
     ax1.plot(d, 'o', mew=0)
-    ax1.set_title("$\mathrm{Data}\ d$")
+    ax1.set_title("$\mathrm{Data}\ \mathbf{d}$")
     ax1_mi, ax1_ma = ax1.get_ylim()
 
     ax2 = fig.add_subplot(2,2,3)
     ax2.plot(m, alpha=0.25)
     ax2.plot(m_est)
-    t = "$\mathrm{{Estimated\ model}}\ m_\mathrm{{est}}.\ \mathrm{{norm}}\ {:.3f}$"
+    t = "$\mathrm{{Estimated\ model}}\ \mathbf{{\hat{{m}}}}.\ \mathrm{{norm}}\ {:.3f}$"
     ax2.set_title(t.format(norm(m_est)))
     ax2_mi, ax2_ma = ax2.get_ylim()
 
     ax3 = fig.add_subplot(2,2,4)
     ax3.plot(d, 'o', mew=0, alpha=0.25)
     ax3.plot(d_pred, 'o', mew=0)
-    t = "$\mathrm{{Predicted\ data}}\ d_\mathrm{{pred}}.\ \mathrm{{misfit}}\ {:.3f}$"
+    t = "$\mathrm{{Predicted\ data}}\ \mathbf{{d}}_\mathrm{{pred}}.\ \mathrm{{misfit}}\ {:.3f}$"
     ax3.set_title(t.format(misfit(d, d_pred)))
     ax3_mi, ax3_ma = ax3.get_ylim()
 
